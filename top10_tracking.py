@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as anime
 from PIL import Image
 
-df = pd.read_csv('tutihasi_00001_20241001083012_SMPINF.csv', dtype=str, encoding='shift_jis')#csv読み込みエンコードをshift_jisに指定（日本語対応）
+df = pd.read_csv('shapeup_data.csv', dtype=str, encoding='shift_jis')#csv読み込みエンコードをshift_jisに指定（日本語対応）
 
 df_select = df.loc[:,["物標ID","時:分:秒.ミリ秒","速度(m/s)","方位角(度)", "緯度", "経度"]]#必要なカラムを抽出
 df_select = df_select.rename(columns={"速度(m/s)": "speed", "物標ID": "target_id"})#エラーが出たので、カラムを別の表記にする！！！！！
